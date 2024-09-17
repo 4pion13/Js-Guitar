@@ -1,0 +1,26 @@
+:root {
+    --color-light: rgba(0, 16, 61, 0.06);
+    --color-secondary: #FFFF;
+    --color-unaccent: #808080;
+    --spacing-small: 10px;
+    --spacing-medium: 15px;
+    --spacing-large: 30px;
+    --shadow: 11px 9px 12px 0px rgba(34, 60, 80, 0.2);
+    --accent: #0070f0;
+    --positive: #0DC268;
+    
+
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    line-height: 1.7;
+    background-color: var(--color-light);
+}
