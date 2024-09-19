@@ -22,17 +22,24 @@ class Shopping {
     render(className){
         let htmlShoppingCard = ''
         const purchases = localStorageUtil.getProducts();
-        purchases.forEach(element => {   
-            const purchasesName = (CATALOG.find(item => item.id === element));
+        console.log(purchases.length)
+        if (purchases.length === 0){
             htmlShoppingCard += `
-                <li class="products-element">
-                    <span class="products-element__name">${purchasesName.name}</span>
-                    <img class="products-element__img" src="${purchasesName.img}">
-                    <span class="products-element__price">${purchasesName.price.toLocaleString()} ₽</span>
-                </li>
+                <p>Корзина пуста</p>
             `
+        }else {
+            purchases.forEach(element => {   
+                const purchasesName = (CATALOG.find(item => item.id === element));
+                htmlShoppingCard += `
+                    <li class="products-element">
+                        <span class="products-element__name">${purchasesName.name}</span>
+                        <img class="products-element__img" src="${purchasesName.img}">
+                        <span class="products-element__price">${purchasesName.price.toLocaleString()} ₽</span>
+                    </li>
+                `
+            });
 
-        });
+        }
 
         const html = `
             <div id="shopping-card" class="shopping-container${className}">
