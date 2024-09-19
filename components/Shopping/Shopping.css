@@ -2,7 +2,7 @@
 .shopping-container {
     background: var(--color-secondary);
     width: 90%;
-    height: 60%;
+
     margin: 0 auto;
     position: absolute;
     display: none;
@@ -18,5 +18,22 @@
     left: 0;
     right: 0;   
     display: block;
+}
+
+
+.shopping-container__item {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+
+}
+
+.shopping-container__btn {
+    cursor: pointer;
+    background-color: brown;
+    border-radius: 5px;
+    height: 40px;
 }
 

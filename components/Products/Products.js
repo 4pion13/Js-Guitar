@@ -14,9 +14,18 @@ class Products {
             element.classList.remove(this.classNameActive);
             element.innerHTML = this.labelAdd;
         }
+
+
+        if (shopping.countShoppingMenu === 0){
+            shopping.render('');
+        }else{
+            shopping.render(shopping.classNameShoppingActive);
+        }
+
         headerPage.render(result.products.length);
-        
+
     }
+
 
     render() {
         const productsItem = localStorageUtil.getProducts();

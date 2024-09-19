@@ -19,6 +19,13 @@ class Shopping {
         }
     }
 
+    deleteFromShoppingCard(elementId){
+        const result = localStorageUtil.putProducts(elementId);
+        this.render(this.classNameShoppingActive);
+        productsPage.render();
+        headerPage.render(result.products.length);
+    }
+
     render(className){
         let htmlShoppingCard = ''
         const purchases = localStorageUtil.getProducts();
@@ -31,11 +38,13 @@ class Shopping {
             purchases.forEach(element => {   
                 const purchasesName = (CATALOG.find(item => item.id === element));
                 htmlShoppingCard += `
-                    <li class="products-element">
-                        <span class="products-element__name">${purchasesName.name}</span>
-                        <img class="products-element__img" src="${purchasesName.img}">
-                        <span class="products-element__price">${purchasesName.price.toLocaleString()} ₽</span>
-                    </li>
+                    <div class="shopping-container__item">
+                        <div>
+                            <span class="products-element__name">${purchasesName.name}</span>
+                            <span class="products-element__price" style="margin: 0 auto">${purchasesName.price.toLocaleString()} ₽</span>
+                        </div>
+                        <button class="shopping-container__btn" onclick = "shopping.deleteFromShoppingCard('${purchasesName.id}')"><i class="fa-solid fa-trash"></i></button>
+                    </div>
                 `
             });
 
