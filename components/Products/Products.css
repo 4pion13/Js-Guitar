@@ -16,6 +16,7 @@
     background-color: var(--color-secondary);
     padding: 30px 15px 30px 15px;
     border-radius: 10px;
+    border: 1px solid gray;
     box-shadow: var(--shadow);
 }
 
@@ -57,7 +58,6 @@
 
 .products-element__btn_active {
     background-color: red;
-    
 }
 
 

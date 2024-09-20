@@ -5,6 +5,8 @@ function render(){
 
 
 }
+
+spinner.render();
 // https://www.myjsons.com/v/73513471
 // server/catalog.json
 let CATALOG = [];
@@ -13,7 +15,10 @@ fetch('server/catalog.json')
     .then(res => res.json())
     .then(body => {
         CATALOG = body;
-        render();
+        setTimeout(function(){
+            spinner.rootClear();
+            render();
+        }, 1000);
     })
     .catch(error => {
         console.log(error);
