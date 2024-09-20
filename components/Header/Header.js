@@ -17,6 +17,4 @@ class Header {
     }
 }
 const productsCounter = localStorageUtil.getProducts();
-console.log(productsCounter.lenght)
 const headerPage = new Header();
-headerPage.render(productsCounter.length);
